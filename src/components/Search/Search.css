@@ -1,0 +1,19 @@
+.myCol{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+  }
+
+  .form-control{
+        border-color: #28a745;
+    } 
+
+    .button{
+        background-color:white; 
+    } 
