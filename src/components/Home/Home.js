@@ -8,16 +8,18 @@ import Col from 'react-bootstrap/Col';
 
 
 
-const Home = ({navbarComponent, menu}) => {
+const Home = ({navbarComponent, searchRent}) => {
     return (
-      <Container fluid="true" style={{ paddingLeft: 0, paddingRight: 0 }}>
-            <Row class="row">
-                <Col xs lg md xl={12}>
-                    {navbarComponent}
-                </Col>
-            </Row>
-            {menu}
-      </Container>
+      <div class="home">
+        <Container fluid="true">
+              <Row>
+                  <Col xs lg md xl={12}>
+                      {navbarComponent}
+                  </Col>
+              </Row>
+              {searchRent}
+        </Container>
+      </div>
     );
   };
 

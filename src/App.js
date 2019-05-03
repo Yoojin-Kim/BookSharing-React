@@ -8,6 +8,8 @@ import BookRegister from './components/BookRegister/BookRegister';
 import Search_Rent from './components/Search/Search_Rent';
 import Search_Sell from './components/Search/Search_Sell';
 
+import './App.css';
+
 import Scrollspy from 'react-scrollspy';
 
 
@@ -115,16 +117,11 @@ class App extends Component {
 
     return (
         <div>
-          <div>
             <section id="home">
               <Home navbarComponent={(<NavbarComponent/>)}
-                menu={(<Menu/>)}>
+                    searchRent = {(<Search_Rent/>)}
+              >
               </Home>
-            </section>
-            <section id="search-rent">
-              <Search_Rent handleKeywordChange={handleKeywordChange}
-                      keyword={keyword}>
-              </Search_Rent>
             </section>
             <section id="search-sell">
               <Search_Sell handleKeywordChange={handleKeywordChange}
@@ -139,17 +136,14 @@ class App extends Component {
               <Sell books={books} keyword={keyword}>
               </Sell>
             </section>
-          </div>
-          <section id="book-register">
-            <BookRegister handleNameChange={handleNameChange}
-                handlePriceChange={handlePriceChange}
-                handleCreate={handleCreate}
-                bookTitle={bookTitle}
-                price={price}>
-            </BookRegister>
-          </section>
-          <Scrollspy items={ ['home','search-rent', 'search-sell', 'rent', 'sell','book-register'] } currentClassName="is-current">
-          </Scrollspy>
+            <section id="book-register">
+              <BookRegister handleNameChange={handleNameChange}
+                  handlePriceChange={handlePriceChange}
+                  handleCreate={handleCreate}
+                  bookTitle={bookTitle}
+                  price={price}>
+              </BookRegister>
+            </section>
       </div>
     );
   }

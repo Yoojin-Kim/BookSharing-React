@@ -17,25 +17,36 @@ class Search_Rent extends Component{
   render(){
     const { handleKeywordChange } = this.props;
     return(
-        <Container>
-          <Row>
-            <Col class="myCol">
-              <div class="center">
-                <InputGroup size="lg">
-                  <Form.Control aria-label="Large" aria-describedby="inputGroup-sizing-sm"
-                    placeholder="책 이름을 입력해주세요"
-                    type = 'text'
-                    onChange = {handleKeywordChange}
-                    inputRef = {ref => {this.keyword = ref;}}
-                  />
-                  <InputGroup.Append>
-                    <Button class="button" href = "#rent">검색</Button>
-                  </InputGroup.Append>
-                </InputGroup>
+          <Row className = "box-row"> 
+            <Col className="search-box-col" xs lg md xl={12}>
+              <div class="search-box">
+                  <Row className="myRow">
+                    <Col xs lg md xl = {3}></Col>
+                    <Col className="myCol" xs lg md xl = {2} ><div class = "catg"><h1>대여</h1></div></Col>
+                    <Col className="myCol" xs lg md xl={2}><div class = "catg"><h1>구매</h1></div></Col>
+                    <Col className="myCol" xs lg md xl={2}><div class = "catg"><h1>판매</h1></div></Col>
+                    <Col xs lg md xl = {3}></Col>
+                  </Row>
+                  <div class="search">
+                    <InputGroup size="lg">
+                      <InputGroup.Prepend>
+                        <span >
+                        </span>
+                      </InputGroup.Prepend>
+                      <Form.Control className = "search-form" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
+                        placeholder="책 이름을 입력해주세요"
+                        type = 'text'
+                        onChange = {handleKeywordChange}
+                        inputRef = {ref => {this.keyword = ref;}}
+                      />
+                      <InputGroup.Append>
+                        <Button variant="secondary" className="button" href = "#rent">찾아보기</Button>
+                      </InputGroup.Append>
+                    </InputGroup>
+                  </div>
               </div>
             </Col>
-          </Row>  
-        </Container>
+          </Row>
     );
   }
 }
