@@ -12,10 +12,17 @@ import './Search.css';
 
 import Rent from '../Rent/Rent';
 
+import { Link } from 'react-router-dom';
+import { all } from 'q';
+
 class Search_Rent extends Component{
 
   render(){
     const { handleKeywordChange } = this.props;
+    const keyword = this.props.keyword;
+
+    const keywordUrl = "list/" + keyword;
+
     return(
           <Row className = "box-row"> 
             <Col className="search-box-col" xs lg md xl={12}>
@@ -40,7 +47,9 @@ class Search_Rent extends Component{
                         inputRef = {ref => {this.keyword = ref;}}
                       />
                       <InputGroup.Append>
-                        <Button variant="secondary" className="button" href = "#rent">찾아보기</Button>
+                        <Button variant="secondary" className="button" href = "#rent">
+                          <Link to= {keywordUrl} style={{ textDecoration: 'none', color: 'white' }}>찾아보기</Link>
+                        </Button>
                       </InputGroup.Append>
                     </InputGroup>
                   </div>
